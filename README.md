@@ -30,6 +30,12 @@
       a) Respuesta método stats: {"count_mutant_dna": <Cantidad de Mutantes>, "count_human_dna": <Cantidad de Humanos>, "ratio": <Ratio Mutantes-Humanos>}<br />
       b) Respuesta método mutant: HTTP 200-OK (Si es Mutante) y HTTP 403-FORBIDDEN (Si es Humano)
 
+# Ejecucion de Prueba
+
+#### Pasos para la ejecución:<br />
+  1 - Debe estar corriendo el proyecto.
+  2 - Ubicarse en cd <PATH_DE_DESCARGA>\MagnetoRestServices"  y ejecutar el siguiente comando "mvn clean test".
+
 # Google App Engine
 
 #### Pasos para la ejecución:<br />
