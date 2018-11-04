@@ -1,9 +1,9 @@
 # Ejecutar MagnetoRestService
 
-Pre-Requisitos:
-    Java8, Maven, Postman (O alguna herramienta parecida), Mongobd (De quere consumir local)
+##### Pre-Requisitos:<br />
+    Java8, Maven, Postman (o alguna herramienta parecida), Mongobd (de quere consumir local)
 
-Pasos para la ejecución:
+##### Pasos para la ejecución:
   1 - Descargar el proyecto MagnetoRestServices.
 
   2 - Abrir un CMD.
@@ -14,38 +14,43 @@ Pasos para la ejecución:
 
   5 - Esperar a que el servicio levante.
 
-  6 - Abrir Postman e ingrese las siguientes urls:
-      a) http://localhost:8080/stats (GET)
+  6 - Abrir Postman e ingrese las siguientes urls:<br />
+      a) http://localhost:8080/stats (GET)<br />
       b) http://localhost:8080/mutant (POST)
 
   7.a - Para ejecutar a) con solo ingresar la url en Postman indicando el tipo de llamado GET.
 
-  7.b - Para ejecutar b) deberá ingresar la url seleccionar el tipo de llamado POST, ingresar un body(war) y seleccionar "application/json" e ingresar una matriz con el siguiente formato:
-      {
-      "dna":["AGCTAA","CTAGCC","TCGAGT","GATCTG","GGGTTT","AAACCC"]
-      }
+  7.b - Para ejecutar b) deberá ingresar la url seleccionar el tipo de llamado POST, ingresar un body(war) y seleccionar "application/json" e ingresar una matriz con el siguiente formato:<br />
+      {<br />
+      "dna":["AGCTAA","CTAGCC","TCGAGT","GATCTG","GGGTTT","AAACCC"]<br />
+      }<br />
       NOTA: "dna" siempre tiene que estar, solo se permite una matriz de 6x6 y solo pueden ser las letras A, T, C y G.
 
-  8 - Dar Send en el Postman, posibles respuestas:
-      a) Respuesta método stats: {"count_mutant_dna": <Cantidad de Mutantes>, "count_human_dna": <Cantidad de Humanos>, "ratio": <Ratio Mutantes-Humanos>}
+  8 - Dar Send en el Postman, posibles respuestas:<br />
+      a) Respuesta método stats: {"count_mutant_dna": <Cantidad de Mutantes>, "count_human_dna": <Cantidad de Humanos>, "ratio": <Ratio Mutantes-Humanos>}<br />
       b) Respuesta método mutant: HTTP 200-OK (Si es Mutante) y HTTP 403-FORBIDDEN (Si es Humano)
 
 # Google App Engine
 
-Pasos para la ejecución:
-  1 - Abrir Postman e ingrese las siguientes urls:
-      a) https://examenmeli1.appspot.com/stats(GET)
+##### Pasos para la ejecución:<br />
+  1 - Abrir Postman e ingrese las siguientes urls:<br />
+      a) https://examenmeli1.appspot.com/stats(GET)<br />
       b) https://examenmeli1.appspot.com/mutant(POST)
 
   2 - Seguir en los pasos 7.a o 7.b, según sea el caso.
 
 # DATABASE MONGODB
-La aplicación actualmente usa MongoDB Atlas . Si se desea cambiar por una DB Mongodb local seguir estos pasos:
-  1 - Abrir el archivo "<PATH_DE_DESCARGA>\MagnetoRestService\src\main\resources\application.properties".
-  2 - Comentar toda la línea correspondiente a el placeholder "spring.data.mongodb.uri".
-  3 - Agregar las siguientes líneas:
-        spring.data.mongodb.host=localhost
+
+##### Pasos para conectar una DB local<br />
+La aplicación actualmente usa MongoDB Atlas . Si se desea cambiar por una DB Mongodb local seguir estos pasos:<br />
+  1 - Abrir el archivo "<PATH_DE_DESCARGA>\MagnetoRestService\src\main\resources\application.properties".<br />
+
+  2 - Comentar toda la línea correspondiente a el placeholder "spring.data.mongodb.uri".<br />
+
+  3 - Agregar las siguientes líneas:<br />
+        spring.data.mongodb.host=localhost<br />
         spring.data.mongodb.port=27017
+
   4 - Volver a ejecutar la aplicación.
 
 NOTA 1: Si se usa local no debería tener Autenticación, de ser así hay de agregar más configuraciones.
