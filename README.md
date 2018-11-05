@@ -1,7 +1,7 @@
 # Ejecutar MagnetoRestService
 
 #### Pre-Requisitos:<br />
-    Java8, Maven, Postman (o alguna herramienta parecida), Mongobd (de quere consumir local)
+    Java8, Maven, Postman (o alguna herramienta parecida), Mongobd (de querer consumir local)
 
 #### Pasos para la ejecución:
   1 - Descargar el proyecto MagnetoRestServices.
